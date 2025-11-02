@@ -2,322 +2,239 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <title>Privacy Policy — CampusBus</title>
-  <meta name="description" content="Privacy Policy for CampusBus — live bus tracking and related services." />
+  <meta name="description" content="Privacy Policy for CampusBus — mobile-friendly version." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg-1: #0f172a;
-      --bg-2: #0b1220;
-      --card: rgba(255,255,255,0.04);
-      --glass: rgba(255,255,255,0.03);
-      --accent: #7c3aed;
+      --bg: #0b1220;
+      --card: #0f1724;
+      --accent: #6d28d9;
       --muted: rgba(255,255,255,0.75);
-      --maxw: 980px;
+      --glass: rgba(255,255,255,0.03);
+      --radius: 14px;
       color-scheme: dark;
     }
     *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
-    body{
-      background: radial-gradient(1200px 400px at 10% 10%, rgba(124,58,237,0.12), transparent 8%),
-                  linear-gradient(180deg,var(--bg-1),var(--bg-2));
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      padding:48px 20px;
-      color:#E6EEF8;
-      display:flex;
-      align-items:flex-start;
-      justify-content:center;
-      gap:20px;
-    }
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;color:#e8f0ff;background:linear-gradient(180deg,var(--bg),#071023);}
 
-    .wrap{
-      width:100%;
-      max-width:var(--maxw);
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border-radius:14px;
-      box-shadow: 0 8px 30px rgba(2,6,23,0.6);
-      overflow:hidden;
-      border: 1px solid rgba(255,255,255,0.03);
-    }
+    .container{max-width:900px;margin:0 auto;padding:18px;}
 
-    .hero{
-      padding:28px 28px;
-      display:flex;
-      gap:18px;
-      align-items:center;
-      border-bottom:1px solid rgba(255,255,255,0.03);
-      background: linear-gradient(90deg, rgba(124,58,237,0.06), transparent 50%);
-    }
-    .logo{
-      min-width:72px;
-      min-height:72px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      border-radius:12px;
-      background:linear-gradient(135deg, rgba(124,58,237,0.18), rgba(0,0,0,0.12));
-      font-weight:700;
-      color:white;
-      font-size:20px;
-      letter-spacing:0.2px;
-      box-shadow: 0 6px 18px rgba(12,8,32,0.6);
-    }
-    .hero h1{margin:0;font-size:20px}
-    .hero p{margin:2px 0 0 0;color:var(--muted);font-size:13px}
+    /* header */
+    header{position:sticky;top:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);backdrop-filter: blur(6px);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);display:flex;align-items:center;gap:12px;z-index:20}
+    .logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#4c1d95);display:flex;align-items:center;justify-content:center;font-weight:700;color:white}
+    header h1{font-size:16px;margin:0}
+    header p{margin:0;font-size:12px;color:var(--muted)}
 
-    .content{
-      display:grid;
-      grid-template-columns: 320px 1fr;
-    }
+    /* card */
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:16px;border-radius:var(--radius);border:1px solid rgba(255,255,255,0.03);margin-top:14px}
 
-    /* left toc */
-    .toc{
-      padding:22px;
-      border-right:1px solid rgba(255,255,255,0.02);
-      background: linear-gradient(180deg, rgba(255,255,255,0.005), transparent 30%);
-    }
-    .toc h3{margin:0 0 14px 0;font-size:13px;color:var(--muted)}
-    .toc nav a{
-      display:block;
-      padding:8px 10px;
-      margin-bottom:6px;
-      color:rgba(226,238,248,0.95);
-      text-decoration:none;
-      font-size:14px;
-      border-radius:8px;
-    }
-    .toc nav a:hover{background:rgba(255,255,255,0.02)}
-    .toc .meta{font-size:13px;color:var(--muted);margin-top:18px}
+    .meta{display:flex;justify-content:space-between;align-items:center;gap:8px}
+    .pill{background:linear-gradient(90deg, rgba(109,40,217,0.14), rgba(109,40,217,0.06));padding:8px 10px;border-radius:999px;font-weight:600;font-size:13px}
 
-    /* right main */
-    .main{
-      padding:28px;
-      min-height:360px;
-    }
-    .main h2{margin-top:0}
-    .section{margin-bottom:22px}
-    .muted{color:var(--muted)}
-    ul{margin:8px 0 8px 20px}
-    li{margin:6px 0}
-    code{background:rgba(255,255,255,0.02);padding:2px 6px;border-radius:6px;font-family:monospace;font-size:0.95em}
-
-    /* responsive */
-    @media (max-width:900px){
-      .content{grid-template-columns:1fr}
-      .toc{order:2;border-right:none;border-top:1px solid rgba(255,255,255,0.02)}
-      .hero{padding:18px}
-      .hero p{display:none}
-      body{padding:20px}
-    }
-
-    /* small helpers */
-    .contact{
-      display:inline-flex;
-      gap:10px;
-      align-items:center;
-      margin-top:6px;
-    }
-    .pill{
-      background:linear-gradient(90deg, rgba(124,58,237,0.18), rgba(124,58,237,0.08));
-      color:#EFF6FF;
-      padding:6px 10px;border-radius:999px;font-weight:600;font-size:13px;
-    }
-    .footer{
-      padding:18px 28px;
-      border-top:1px solid rgba(255,255,255,0.03);
-      font-size:13px;
-      color:var(--muted);
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:10px;
-    }
-
-    /* details style for mobile-friendly collapsible sections */
-    details{
-      background:var(--glass);
-      padding:12px;
-      border-radius:10px;
-      margin-top:8px;
-      border:1px solid rgba(255,255,255,0.02);
-    }
-    summary{cursor:pointer;font-weight:600}
+    /* accordion */
+    .accordion{margin-top:12px}
+    details{background:var(--glass);padding:12px;border-radius:10px;margin-bottom:10px;border:1px solid rgba(255,255,255,0.02)}
+    summary{cursor:pointer;font-weight:700;font-size:15px}
     details[open] summary{color:var(--accent)}
+    .section-content{margin-top:8px;font-size:14px;line-height:1.45;color:#dfefff}
+    ul{margin:8px 0 8px 18px}
+
+    footer{margin-top:18px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+    .small{font-size:13px;color:var(--muted)}
+
+    /* utility buttons */
+    .btns{display:flex;gap:8px}
+    .btn{padding:8px 10px;border-radius:10px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.02);font-weight:600;font-size:13px;color:#e9f2ff}
+    .btn:active{transform:translateY(1px)}
+
+    /* improved readability on small phones */
+    @media (max-width:420px){
+      .container{padding:12px}
+      header{padding:12px}
+      .card{padding:12px}
+      summary{font-size:14px}
+    }
+
+    /* print-friendly */
+    @media print{body{background:white;color:black} .logo{background:black;color:white} .card, header{background:white;border:none}}
   </style>
 </head>
 <body>
-  <main class="wrap" role="main" aria-labelledby="policyTitle">
-    <header class="hero">
+  <div class="container">
+    <header aria-label="Privacy policy header">
       <div class="logo" aria-hidden="true">CB</div>
-      <div>
-        <h1 id="policyTitle">Privacy Policy — CampusBus</h1>
-        <p class="muted">Owned and operated by <strong>Aditya Barman</strong>. Contact: <a href="mailto:rishcrets@gmail.com" style="color:inherit;text-decoration:underline;">rishcrets@gmail.com</a></p>
-        <div class="contact">
-          <span class="pill" id="lastUpdated">Last updated: November 3, 2025</span>
-        </div>
+      <div style="flex:1">
+        <h1>Privacy Policy — CampusBus</h1>
+        <p class="small">Owned and operated by <strong>Rishabh Barman</strong> • <a href="mailto:rishcrets@gmail.com" style="color:inherit;text-decoration:underline">rishcrets@gmail.com</a></p>
+      </div>
+      <div style="text-align:right">
+        <div class="pill">Last updated<br><strong style="font-size:12px">Nov 3, 2025</strong></div>
       </div>
     </header>
 
-    <div class="content">
-      <aside class="toc" aria-label="Table of contents">
-        <h3>On this page</h3>
-        <nav>
-          <a href="#overview">1. Overview</a>
-          <a href="#data">2. Data we collect</a>
-          <a href="#purposes">3. Why we collect it</a>
-          <a href="#sharing">4. Sharing & disclosures</a>
-          <a href="#retention">5. Retention</a>
-          <a href="#security">6. Security</a>
-          <a href="#rights">7. Your choices & rights</a>
-          <a href="#children">8. Children</a>
-          <a href="#changes">9. Changes</a>
-        </nav>
-
-        <div class="meta">
-          <strong>App</strong><div class="muted">CampusBus — campus bus tracking</div>
-          <div style="margin-top:12px">
-            <strong>Contact</strong>
-            <div class="muted"><a href="mailto:rishcrets@gmail.com" style="color:inherit;text-decoration:underline;">rishcrets@gmail.com</a></div>
-          </div>
+    <main class="card" id="policy">
+      <div class="meta">
+        <div style="flex:1">
+          <p class="small">CampusBus provides campus bus-tracking and related services (live bus locations, ETA, schedules, optional word game/leaderboard). Below: what we collect, why, retention, and your rights.</p>
         </div>
-      </aside>
+        <div class="btns" aria-hidden="false">
+          <button class="btn" id="copyEmailBtn" title="Copy contact email">Copy email</button>
+          <button class="btn" id="printBtn" title="Print this policy">Print</button>
+        </div>
+      </div>
 
-      <article class="main">
-        <!-- Full policy sections -->
-        <section id="overview" class="section">
-          <h2>1. Overview</h2>
-          <p class="muted">CampusBus provides a campus bus-tracking and related services (live bus locations, ETA, schedules, and an optional word game/leaderboard). This policy explains what information we collect, why, how long we keep it, and your rights.</p>
-        </section>
+      <!-- Accordion sections: mobile-first -->
+      <div class="accordion" role="region" aria-label="Privacy sections">
 
-        <section id="data" class="section">
-          <h2>2. Data we collect</h2>
-          <p>We collect only what we need to operate the app:</p>
+        <details open>
+          <summary>1. Overview</summary>
+          <div class="section-content">
+            <p>CampusBus provides campus bus-tracking and related services (live bus locations, ETA, schedules, and an optional word game/leaderboard). This policy explains what information we collect, why, how long we keep it, and your rights.</p>
+          </div>
+        </details>
 
-          <details>
-            <summary><strong>Account & identity</strong></summary>
-            <div style="margin-top:8px">
-              <ul>
-                <li><strong>Email</strong> (from Google Sign-In), <code>user_id</code> (auth ID).</li>
-                <li><strong>Optional:</strong> <em>full_name</em> and <em>phone</em> only if the user provides them (e.g., during profile completion). These are used to personalize the app, show leaderboard names, and support account features.</li>
-              </ul>
-            </div>
-          </details>
+        <details>
+          <summary>2. Data we collect</summary>
+          <div class="section-content">
+            <strong>Account &amp; identity</strong>
+            <ul>
+              <li>Email (from Google Sign-In) and <code>user_id</code>.</li>
+              <li>Optional: full_name and phone only if the user provides them (profile completion).</li>
+            </ul>
 
-          <details>
-            <summary><strong>Location</strong></summary>
-            <div style="margin-top:8px">
-              <ul>
-                <li><strong>Driver / bus locations:</strong> we receive real-time GPS coordinates for buses (via HiveMQ/MQTT). We <strong>do not</strong> keep a historical track — we only store the last known bus location and overwrite it when a newer location arrives.</li>
-                <li>We <strong>do not</strong> collect students’ device locations unless a student explicitly opts-in to share their location within the app to see their own position on a map; even then student location is not stored persistently unless the user explicitly requests it.</li>
-              </ul>
-            </div>
-          </details>
+            <strong>Location</strong>
+            <ul>
+              <li>Driver/bus locations (real-time via HiveMQ/MQTT). We <em>only</em> store the last known location and overwrite it with newer updates — no historical archive.</li>
+              <li>Students' device location is not collected unless they opt-in to share it in-app; even then it's not stored persistently unless explicitly requested.</li>
+            </ul>
 
-          <details>
-            <summary><strong>Files / uploads</strong></summary>
-            <div style="margin-top:8px">
-              <ul>
-                <li>Profile photos or media submitted as part of feedback/reports (only if user uploads). These are stored to support the report and may be retained as described below.</li>
-              </ul>
-            </div>
-          </details>
+            <strong>Files / uploads</strong>
+            <ul>
+              <li>Profile photos or media in feedback/reports (only if uploaded by user).</li>
+            </ul>
 
-          <details>
-            <summary><strong>Diagnostics & logs</strong></summary>
-            <div style="margin-top:8px">
-              <ul>
-                <li>Basic device info, IP, timestamps and crash logs (for debugging). These are used for security and troubleshooting, and are retained for a limited period.</li>
-              </ul>
-            </div>
-          </details>
+            <strong>Diagnostics &amp; logs</strong>
+            <ul>
+              <li>Device basic info, IP, timestamps and crash logs for debugging and security.</li>
+            </ul>
 
-          <details>
-            <summary><strong>Third-party services</strong></summary>
-            <div style="margin-top:8px">
-              <p class="muted">We use Mapbox (maps/tiles), HiveMQ/MQTT (realtime bus locations), and Supabase (auth + DB). These services process data on our behalf.</p>
-            </div>
-          </details>
-        </section>
+            <strong>Third-party services</strong>
+            <p class="small">Mapbox (maps/tiles), HiveMQ/MQTT (realtime), and Supabase (auth &amp; DB) process data on our behalf.</p>
+          </div>
+        </details>
 
-        <section id="purposes" class="section">
-          <h2>3. Why we collect it (purposes)</h2>
-          <ul>
-            <li>Provide live bus locations, ETA and routing.</li>
-            <li>Allow account, leaderboards and game score storage.</li>
-            <li>Accept feedback/reports (with optional photo).</li>
-            <li>Improve and secure the service (diagnostics).</li>
-            <li>Communicate important notifications (e.g., top-1 announcement).</li>
-          </ul>
-        </section>
+        <details>
+          <summary>3. Why we collect it</summary>
+          <div class="section-content">
+            <ul>
+              <li>Provide live bus locations, ETA and routing</li>
+              <li>Store account, leaderboard and game scores</li>
+              <li>Accept feedback/reports (with optional photo)</li>
+              <li>Improve &amp; secure the service (diagnostics)</li>
+              <li>Communicate important notifications</li>
+            </ul>
+          </div>
+        </details>
 
-        <section id="sharing" class="section">
-          <h2>4. Sharing & disclosures</h2>
-          <ul>
-            <li>We do not sell personal data.</li>
-            <li>We share data with the third-party providers above only to the extent needed to operate the service.</li>
-            <li>We do not share user data with external parties except under legal obligation (e.g., court order) or to protect safety/security.</li>
-          </ul>
-        </section>
+        <details>
+          <summary>4. Sharing &amp; disclosures</summary>
+          <div class="section-content">
+            <ul>
+              <li>We do not sell personal data.</li>
+              <li>We share data with Mapbox, HiveMQ, and Supabase only as needed to operate the service.</li>
+              <li>We disclose user data only if legally required (e.g., court order) or to protect safety/security.</li>
+            </ul>
+          </div>
+        </details>
 
-        <section id="retention" class="section">
-          <h2>5. Retention (recommended defaults)</h2>
-          <ul>
-            <li><strong>Bus last-location:</strong> only last known location kept; overwritten on each update. No historical location archive.</li>
-            <li><strong>Profile & account info</strong> (email, user_id, name, phone): retained while the account exists; removed on account deletion request.</li>
-            <li><strong>Uploaded report photos:</strong> retained for <strong>90 days</strong> by default (or until user asks for deletion).</li>
-            <li><strong>Logs & diagnostics:</strong> retained <strong>30–90 days</strong> depending on type.</li>
-          </ul>
-          <p class="muted">(Retention durations are configurable server-side and can be adjusted based on privacy/legal requirements.)</p>
-        </section>
+        <details>
+          <summary>5. Retention</summary>
+          <div class="section-content">
+            <ul>
+              <li><strong>Bus last-location:</strong> only last known location kept; overwritten on each update.</li>
+              <li><strong>Profile &amp; account info:</strong> retained while the account exists; removed on account deletion request.</li>
+              <li><strong>Uploaded photos:</strong> retained for <strong>90 days</strong> (or until user asks for deletion).</li>
+              <li><strong>Logs &amp; diagnostics:</strong> retained <strong>30–90 days</strong> depending on type.</li>
+            </ul>
+            <p class="small">(Retention values are server-configurable.)</p>
+          </div>
+        </details>
 
-        <section id="security" class="section">
-          <h2>6. Security</h2>
-          <p>We use TLS/HTTPS for all network traffic. Access to server data is restricted and credentials are rotated periodically. We recommend not embedding secret/service keys in the app (use server-side secrets, environment variables, and short-lived credentials when possible).</p>
-        </section>
+        <details>
+          <summary>6. Security</summary>
+          <div class="section-content">
+            <p>We use TLS/HTTPS for all network traffic. Server access is restricted and credentials are rotated periodically. Do not embed secret/service keys in the app — prefer server-side secrets and short-lived credentials.</p>
+          </div>
+        </details>
 
-        <section id="rights" class="section">
-          <h2>7. Your choices & rights</h2>
-          <ul>
-            <li>You can revoke or grant location permission at any time via device settings.</li>
-            <li>You can request deletion of your account/data by contacting <a href="mailto:rishcrets@gmail.com" style="color:inherit;text-decoration:underline;">rishcrets@gmail.com</a>.</li>
-            <li>You can request a copy of your personal data via <a href="mailto:rishcrets@gmail.com" style="color:inherit;text-decoration:underline;">rishcrets@gmail.com</a>.</li>
-          </ul>
-        </section>
+        <details>
+          <summary>7. Your choices &amp; rights</summary>
+          <div class="section-content">
+            <ul>
+              <li>Revoke/grant location permission via device settings anytime.</li>
+              <li>Request deletion of your account/data by contacting <a href="mailto:rishcrets@gmail.com">rishcrets@gmail.com</a>.</li>
+              <li>Request a copy of your personal data at <a href="mailto:rishcrets@gmail.com">rishcrets@gmail.com</a>.</li>
+            </ul>
+          </div>
+        </details>
 
-        <section id="children" class="section">
-          <h2>8. Children</h2>
-          <p>The app is intended for college/university students and staff. We do not knowingly collect data from children under the applicable legal age (e.g., under 13). If you believe a child’s data was collected, contact <a href="mailto:rishcrets@gmail.com" style="color:inherit;text-decoration:underline;">rishcrets@gmail.com</a>.</p>
-        </section>
+        <details>
+          <summary>8. Children</summary>
+          <div class="section-content">
+            <p>The app is intended for college/university students and staff. We do not knowingly collect data from children under the applicable legal age (e.g., under 13). If you believe a child’s data was collected, contact <a href="mailto:rishcrets@gmail.com">rishcrets@gmail.com</a>.</p>
+          </div>
+        </details>
 
-        <section id="changes" class="section">
-          <h2>9. Changes to this policy</h2>
-          <p>We will post updates here with a new “Last updated” date. Significant changes will be announced in-app.</p>
-        </section>
+        <details>
+          <summary>9. Changes</summary>
+          <div class="section-content">
+            <p>We will post updates here with a new "Last updated" date. Significant changes will be announced in-app.</p>
+          </div>
+        </details>
 
-        <footer style="margin-top:18px">
-          <p class="muted" style="font-size:13px">If you have privacy questions or want to exercise your data rights, contact: <a href="mailto:rishcrets@gmail.com" style="color:inherit;text-decoration:underline;">rishcrets@gmail.com</a></p>
-        </footer>
-      </article>
-    </div>
+      </div>
 
-    <div class="footer">
-      <div>CampusBus &mdash; Privacy Policy</div>
-      <div class="muted">Last updated: November 3, 2025</div>
-    </div>
-  </main>
+      <footer>
+        <div class="small">Contact: <a href="mailto:rishcrets@gmail.com">rishcrets@gmail.com</a></div>
+        <div style="display:flex;gap:8px">
+          <button class="btn" id="downloadBtn">Download HTML</button>
+        </div>
+      </footer>
+    </main>
+
+    <p style="font-size:12px;color:var(--muted);margin-top:12px">Mobile-first, touch-friendly layout. Want a brighter theme, local language, or a short consent banner? Tell me which and I'll update it.</p>
+  </div>
 
   <script>
-    // Small script: make the "last updated" pill reflect an absolute date (already set) but keep it dynamic if needed.
-    // NOTE: We intentionally keep the display static for auditability; but this script will keep it in sync with the page load date if you want.
-    (function(){
-      // If you'd prefer automatic date, uncomment below and comment out static text above.
-      // const pill = document.getElementById('lastUpdated');
-      // const now = new Date();
-      // const opts = { year: 'numeric', month: 'long', day: 'numeric' };
-      // pill.textContent = 'Last updated: ' + now.toLocaleDateString('en-GB', opts);
-    })();
+    // Utilities: copy email, print, download
+    const email = 'rishcrets@gmail.com';
+    document.getElementById('copyEmailBtn').addEventListener('click', async ()=>{
+      try{ await navigator.clipboard.writeText(email); alert('Email copied to clipboard: ' + email);}catch(e){prompt('Copy this email:', email)}
+    });
+
+    document.getElementById('printBtn').addEventListener('click', ()=>{ window.print(); });
+
+    document.getElementById('downloadBtn').addEventListener('click', ()=>{
+      const html = '<!doctype html>' + document.documentElement.outerHTML;
+      const blob = new Blob([html], {type: 'text/html'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'privacy_mobile_friendly.html'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    });
+
+    // Make accordion easier to use on mobile: close others when one opens
+    document.querySelectorAll('details').forEach(d => {
+      d.addEventListener('toggle', e => {
+        if (d.open) {
+          document.querySelectorAll('details').forEach(dd => { if (dd !== d) dd.open = false; });
+          // scroll into view gently for small screens
+          setTimeout(()=>{ d.scrollIntoView({behavior:'smooth', block:'center'}); }, 160);
+        }
+      });
+    });
   </script>
 </body>
 </html>
+
