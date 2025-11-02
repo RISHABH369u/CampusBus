@@ -4,70 +4,342 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <title>Privacy Policy — CampusBus</title>
-  <meta name="description" content="Privacy Policy for CampusBus — mobile-friendly version." />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Privacy Policy for CampusBus." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    :root{
-      --bg: #0b1220;
-      --card: #0f1724;
-      --accent: #6d28d9;
-      --muted: rgba(255,255,255,0.75);
-      --glass: rgba(255,255,255,0.03);
-      --radius: 14px;
+    :root {
+      --bg-primary: #0a0e1a;
+      --bg-secondary: #0f1724;
+      --accent-primary: #7c3aed;
+      --accent-secondary: #a78bfa;
+      --text-primary: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+      --border-light: rgba(255, 255, 255, 0.08);
+      --border-accent: rgba(124, 58, 237, 0.2);
+      --shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --radius: 16px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       color-scheme: dark;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;color:#e8f0ff;background:linear-gradient(180deg,var(--bg),#071023);}
 
-    .container{max-width:900px;margin:0 auto;padding:18px;}
-
-    /* header */
-    header{position:sticky;top:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);backdrop-filter: blur(6px);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);display:flex;align-items:center;gap:12px;z-index:20}
-    .logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#4c1d95);display:flex;align-items:center;justify-content:center;font-weight:700;color:white}
-    header h1{font-size:16px;margin:0}
-    header p{margin:0;font-size:12px;color:var(--muted)}
-
-    /* card */
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:16px;border-radius:var(--radius);border:1px solid rgba(255,255,255,0.03);margin-top:14px}
-
-    .meta{display:flex;justify-content:space-between;align-items:center;gap:8px}
-    .pill{background:linear-gradient(90deg, rgba(109,40,217,0.14), rgba(109,40,217,0.06));padding:8px 10px;border-radius:999px;font-weight:600;font-size:13px}
-
-    /* accordion */
-    .accordion{margin-top:12px}
-    details{background:var(--glass);padding:12px;border-radius:10px;margin-bottom:10px;border:1px solid rgba(255,255,255,0.02)}
-    summary{cursor:pointer;font-weight:700;font-size:15px}
-    details[open] summary{color:var(--accent)}
-    .section-content{margin-top:8px;font-size:14px;line-height:1.45;color:#dfefff}
-    ul{margin:8px 0 8px 18px}
-
-    footer{margin-top:18px;display:flex;justify-content:space-between;align-items:center;gap:8px}
-    .small{font-size:13px;color:var(--muted)}
-
-    /* utility buttons */
-    .btns{display:flex;gap:8px}
-    .btn{padding:8px 10px;border-radius:10px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.02);font-weight:600;font-size:13px;color:#e9f2ff}
-    .btn:active{transform:translateY(1px)}
-
-    /* improved readability on small phones */
-    @media (max-width:420px){
-      .container{padding:12px}
-      header{padding:12px}
-      .card{padding:12px}
-      summary{font-size:14px}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    /* print-friendly */
-    @media print{body{background:white;color:black} .logo{background:black;color:white} .card, header{background:white;border:none}}
+    html, body {
+      height: 100%;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--text-primary);
+      background: linear-gradient(135deg, var(--bg-primary) 0%, #1e293b 50%, var(--bg-secondary) 100%);
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px 16px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 16px;
+      background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(124, 58, 237, 0.05));
+      backdrop-filter: blur(20px) saturate(180%);
+      padding: 16px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border-accent);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      z-index: 20;
+      box-shadow: var(--shadow-light);
+      animation: slideDown 0.5s ease-out;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .logo {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: white;
+      font-size: 20px;
+      box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+      transition: var(--transition);
+    }
+
+    .logo:hover {
+      transform: scale(1.05) rotate(5deg);
+    }
+
+    header h1 {
+      font-size: 18px;
+      font-weight: 700;
+      margin: 0;
+      flex: 1;
+    }
+
+    header p {
+      margin: 0;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .pill {
+      background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+      padding: 8px 12px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 12px;
+      color: white;
+      box-shadow: 0 2px 8px rgba(124, 58, 237, 0.2);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+
+    /* Meta and Buttons */
+    .meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .meta p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .btns {
+      display: flex;
+      gap: 8px;
+    }
+
+    .btn {
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      border: 1px solid var(--border-light);
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      backdrop-filter: blur(10px);
+    }
+
+    .btn:hover, .btn:active {
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+      color: white;
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .btn i {
+      font-size: 14px;
+    }
+
+    /* Card */
+    .card {
+      background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
+      backdrop-filter: blur(20px);
+      padding: 20px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border-accent);
+      margin-top: 16px;
+      box-shadow: var(--shadow-light);
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Accordion */
+    .accordion {
+      margin-top: 12px;
+    }
+
+    details {
+      background: rgba(255, 255, 255, 0.02);
+      padding: 0;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      border: 1px solid var(--border-light);
+      overflow: hidden;
+      transition: var(--transition);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    details:hover {
+      border-color: var(--border-accent);
+      box-shadow: var(--shadow-hover);
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 16px;
+      padding: 16px 20px;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::before {
+      content: '\f107';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      font-size: 14px;
+      color: var(--accent-primary);
+      transition: var(--transition);
+      margin-right: 8px;
+    }
+
+    details[open] summary::before {
+      content: '\f106';
+      color: var(--accent-secondary);
+    }
+
+    details[open] summary {
+      color: var(--accent-primary);
+      background: linear-gradient(90deg, rgba(124, 58, 237, 0.1), transparent);
+    }
+
+    .section-content {
+      margin-top: 0;
+      padding: 0 20px 20px;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      animation: slideIn 0.3s ease-out;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    }
+
+    details[open] .section-content {
+      max-height: 1000px;
+      animation: slideIn 0.4s ease-out;
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    ul {
+      margin: 12px 0 12px 20px;
+      list-style-type: none;
+    }
+
+    ul li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 8px;
+      color: var(--text-secondary);
+    }
+
+    ul li::before {
+      content: '\f058';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      color: var(--accent-primary);
+      position: absolute;
+      left: 0;
+      font-size: 10px;
+    }
+
+    .small {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-light);
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .container { padding: 16px 12px; }
+      header { padding: 14px; }
+      .card { padding: 16px; }
+      summary { font-size: 15px; padding: 14px 16px; }
+      .section-content { padding: 0 16px 16px; font-size: 13px; }
+      .meta { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .btns { width: 100%; justify-content: center; }
+      footer { flex-direction: column; gap: 12px; text-align: center; }
+    }
+
+    @media (max-width: 360px) {
+      .logo { width: 48px; height: 48px; font-size: 18px; }
+      header h1 { font-size: 16px; }
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg-secondary);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--accent-primary);
+      border-radius: 3px;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <header aria-label="Privacy policy header">
-      <div class="logo" aria-hidden="true">CB</div>
+      <div class="logo" aria-hidden="true"></div>
       <div style="flex:1">
         <h1>Privacy Policy — CampusBus</h1>
-        <p class="small">Owned and operated by <strong>Rishabh Barman</strong> • <a href="mailto:rishcrets@gmail.com" style="color:inherit;text-decoration:underline">rishcrets@gmail.com</a></p>
+        <p class="small">Owned and operated by <strong>Aditya Barman</strong> • <a href="mailto:rishcrets@gmail.com" style="color:inherit;text-decoration:underline">rishcrets@gmail.com</a></p>
       </div>
       <div style="text-align:right">
         <div class="pill">Last updated<br><strong style="font-size:12px">Nov 3, 2025</strong></div>
@@ -80,8 +352,7 @@
           <p class="small">CampusBus provides campus bus-tracking and related services (live bus locations, ETA, schedules, optional word game/leaderboard). Below: what we collect, why, retention, and your rights.</p>
         </div>
         <div class="btns" aria-hidden="false">
-          <button class="btn" id="copyEmailBtn" title="Copy contact email">Copy email</button>
-          <button class="btn" id="printBtn" title="Print this policy">Print</button>
+          <button class="btn" id="copyEmailBtn" title="Copy contact email"><i class="fas fa-copy"></i> Copy email</button>
         </div>
       </div>
 
@@ -198,43 +469,63 @@
 
       <footer>
         <div class="small">Contact: <a href="mailto:rishcrets@gmail.com">rishcrets@gmail.com</a></div>
-        <div style="display:flex;gap:8px">
-          <button class="btn" id="downloadBtn">Download HTML</button>
-        </div>
       </footer>
     </main>
 
-    <p style="font-size:12px;color:var(--muted);margin-top:12px">Mobile-first, touch-friendly layout. Want a brighter theme, local language, or a short consent banner? Tell me which and I'll update it.</p>
+    <p style="font-size:12px;color:var(--text-muted);margin-top:16px;text-align:center">CampusBus makes your daily travel predictable, reliable and stress-free.</p>
   </div>
 
   <script>
     // Utilities: copy email, print, download
     const email = 'rishcrets@gmail.com';
-    document.getElementById('copyEmailBtn').addEventListener('click', async ()=>{
-      try{ await navigator.clipboard.writeText(email); alert('Email copied to clipboard: ' + email);}catch(e){prompt('Copy this email:', email)}
+    document.getElementById('copyEmailBtn').addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(email);
+        const btn = event.target;
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+        btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          btn.style.background = '';
+        }, 2000);
+      } catch (e) {
+        prompt('Copy this email:', email);
+      }
     });
 
-    document.getElementById('printBtn').addEventListener('click', ()=>{ window.print(); });
 
-    document.getElementById('downloadBtn').addEventListener('click', ()=>{
-      const html = '<!doctype html>' + document.documentElement.outerHTML;
-      const blob = new Blob([html], {type: 'text/html'});
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url; a.download = 'privacy_mobile_friendly.html'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
-    });
 
-    // Make accordion easier to use on mobile: close others when one opens
+
+    // Enhanced accordion: close others when one opens, with better mobile scroll
     document.querySelectorAll('details').forEach(d => {
       d.addEventListener('toggle', e => {
         if (d.open) {
-          document.querySelectorAll('details').forEach(dd => { if (dd !== d) dd.open = false; });
-          // scroll into view gently for small screens
-          setTimeout(()=>{ d.scrollIntoView({behavior:'smooth', block:'center'}); }, 160);
+          document.querySelectorAll('details').forEach(dd => {
+            if (dd !== d) dd.open = false;
+          });
+          // Smooth scroll into view for small screens
+          setTimeout(() => {
+            d.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 200);
         }
       });
+    });
+
+    // Add intersection observer for fade-in on scroll (for sections)
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('details').forEach(detail => {
+      observer.observe(detail);
+      detail.style.animationPlayState = 'paused';
+      detail.style.animation = 'fadeInUp 0.6s ease-out forwards';
     });
   </script>
 </body>
 </html>
-
