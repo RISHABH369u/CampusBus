@@ -9,356 +9,268 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
-      --bg-primary: #0a0e1a;
-      --bg-secondary: #0f1724;
-      --accent-primary: #7c3aed;
-      --accent-secondary: #a78bfa;
-      --text-primary: #f8fafc;
-      --text-secondary: #cbd5e1;
-      --text-muted: #94a3b8;
-      --border-light: rgba(255, 255, 255, 0.08);
-      --border-accent: rgba(124, 58, 237, 0.2);
-      --shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-      --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-      --radius: 16px;
-      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --bg-primary: #071028;
+      --bg-secondary: #0b1220;
+      --glass: rgba(255,255,255,0.03);
+      --accent-1: #7c3aed;
+      --accent-2: #a78bfa;
+      --accent-3: #06b6d4;
+      --text: #e6f0ff;
+      --muted: #9fb0c9;
+      --card-border: rgba(255,255,255,0.04);
+      --radius: 14px;
+      --shadow: 0 8px 28px rgba(2,6,23,0.6);
       color-scheme: dark;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html,body { height:100%; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial; background:
+      radial-gradient(800px 300px at 10% 10%, rgba(124,58,237,0.06), transparent 8%),
+      linear-gradient(180deg,var(--bg-primary),var(--bg-secondary));
+      color:var(--text); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
     }
 
-    html, body {
-      height: 100%;
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      color: var(--text-primary);
-      background: linear-gradient(135deg, var(--bg-primary) 0%, #1e293b 50%, var(--bg-secondary) 100%);
-      overflow-x: hidden;
-      scroll-behavior: smooth;
+    .page {
+      max-width: 980px;
+      margin: 20px auto;
+      padding: 18px;
     }
 
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px 16px;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* Header */
-    header {
+    /* Header - enhanced */
+    .header {
       position: sticky;
       top: 16px;
-      background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(124, 58, 237, 0.05));
-      backdrop-filter: blur(20px) saturate(180%);
-      padding: 16px;
-      border-radius: var(--radius);
-      border: 1px solid var(--border-accent);
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      z-index: 20;
-      box-shadow: var(--shadow-light);
-      animation: slideDown 0.5s ease-out;
+      z-index: 40;
+      display:flex;
+      align-items:center;
+      gap:14px;
+      padding:14px;
+      border-radius:16px;
+      background: linear-gradient(90deg, rgba(123,58,237,0.08), rgba(6,182,212,0.03));
+      border: 1px solid rgba(255,255,255,0.03);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px) saturate(140%);
+      transition: transform .28s ease;
     }
 
-    @keyframes slideDown {
-      from { transform: translateY(-20px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
+    .logo-wrap {
+      width:64px;
+      height:64px;
+      border-radius:12px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: linear-gradient(135deg,var(--accent-1),var(--accent-2));
+      box-shadow: 0 8px 30px rgba(124,58,237,0.16);
+      transform-origin:center;
+      transition: transform .45s cubic-bezier(.2,.8,.2,1);
     }
 
+    .logo-wrap:hover { transform: rotate(6deg) scale(1.04); }
     .logo {
-      width: 52px;
-      height: 52px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      color: white;
-      font-size: 20px;
-      box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
-      transition: var(--transition);
+      font-weight:800;
+      letter-spacing:0.6px;
+      color:white;
+      font-size:20px;
     }
 
-    .logo:hover {
-      transform: scale(1.05) rotate(5deg);
+    .head-text { flex:1; min-width:0; }
+    .head-text h1 {
+      font-size:18px;
+      line-height:1.05;
+      margin-bottom:6px;
+      font-weight:700;
+    }
+    .head-text p {
+      font-size:13px;
+      color:var(--muted);
+      margin:0;
+      display:flex;
+      gap:8px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .email-link { text-decoration:underline; color:inherit; }
+
+    .header-actions {
+      display:flex;
+      gap:8px;
+      align-items:center;
     }
 
-    header h1 {
-      font-size: 18px;
-      font-weight: 700;
-      margin: 0;
-      flex: 1;
+    .last-updated {
+      background: linear-gradient(90deg,var(--accent-1),var(--accent-2));
+      color:white;
+      padding:8px 12px;
+      border-radius:999px;
+      font-weight:700;
+      font-size:12px;
+      box-shadow: 0 6px 18px rgba(124,58,237,0.12);
+      text-align:center;
     }
 
-    header p {
-      margin: 0;
-      font-size: 13px;
-      color: var(--text-muted);
+    /* header accent bar */
+    .accent-bar {
+      width:100%;
+      height:6px;
+      margin-top:10px;
+      border-radius:999px;
+      background: linear-gradient(90deg,var(--accent-1),var(--accent-3),var(--accent-2));
+      opacity:0.9;
     }
 
-    .pill {
-      background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
-      padding: 8px 12px;
-      border-radius: 20px;
-      font-weight: 600;
-      font-size: 12px;
-      color: white;
-      box-shadow: 0 2px 8px rgba(124, 58, 237, 0.2);
-      animation: pulse 2s infinite;
+    /* Card body */
+    .card {
+      margin-top:18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:14px;
+      padding:18px;
+      border:1px solid var(--card-border);
+      box-shadow: 0 6px 20px rgba(3,8,20,0.6);
     }
 
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.7; }
+    .top-meta {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:14px;
     }
-
-    /* Meta and Buttons */
-    .meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-
-    .meta p {
-      font-size: 14px;
-      color: var(--text-secondary);
-      line-height: 1.5;
-    }
-
-    .btns {
-      display: flex;
-      gap: 8px;
-    }
+    .top-meta .desc { color:var(--muted); font-size:14px; line-height:1.5; }
+    .actions { display:flex; gap:10px; }
 
     .btn {
-      padding: 10px 14px;
-      border-radius: 10px;
-      background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
-      border: 1px solid var(--border-light);
-      font-weight: 600;
-      font-size: 13px;
-      color: var(--text-primary);
-      cursor: pointer;
-      transition: var(--transition);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      backdrop-filter: blur(10px);
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 12px;
+      font-weight:700;
+      border-radius:10px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      border: 1px solid rgba(255,255,255,0.03);
+      cursor:pointer;
+      transition: all .2s ease;
+      color:var(--text);
+      font-size:13px;
     }
+    .btn i { opacity:0.9; }
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(12,10,40,0.45); background:linear-gradient(90deg,var(--accent-1),var(--accent-2)); color:white; }
 
-    .btn:hover, .btn:active {
-      background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-      color: white;
-      transform: translateY(-1px);
-      box-shadow: var(--shadow-hover);
-    }
-
-    .btn i {
-      font-size: 14px;
-    }
-
-    /* Card */
-    .card {
-      background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
-      backdrop-filter: blur(20px);
-      padding: 20px;
-      border-radius: var(--radius);
-      border: 1px solid var(--border-accent);
-      margin-top: 16px;
-      box-shadow: var(--shadow-light);
-      animation: fadeInUp 0.6s ease-out;
-    }
-
-    @keyframes fadeInUp {
-      from { transform: translateY(20px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    /* Accordion */
-    .accordion {
-      margin-top: 12px;
-    }
-
-    details {
-      background: rgba(255, 255, 255, 0.02);
-      padding: 0;
-      border-radius: 12px;
-      margin-bottom: 12px;
-      border: 1px solid var(--border-light);
-      overflow: hidden;
-      transition: var(--transition);
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    }
-
-    details:hover {
-      border-color: var(--border-accent);
-      box-shadow: var(--shadow-hover);
-    }
-
+    /* Accordion + sections */
+    .accordion { margin-top:12px; }
+    details { margin-bottom:12px; border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,0.02); background:rgba(255,255,255,0.02); transition: all .25s ease; }
     summary {
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 16px;
-      padding: 16px 20px;
-      list-style: none;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      transition: var(--transition);
-      position: relative;
+      list-style:none; cursor:pointer; padding:14px 16px; display:flex; align-items:center; gap:12px; font-weight:700; font-size:15px;
     }
-
-    summary::-webkit-details-marker {
-      display: none;
-    }
-
+    summary::marker { display:none; }
     summary::before {
       content: '\f107';
-      font-family: 'Font Awesome 6 Free';
-      font-weight: 900;
-      font-size: 14px;
-      color: var(--accent-primary);
-      transition: var(--transition);
-      margin-right: 8px;
+      font-family: "Font Awesome 6 Free";
+      font-weight:900;
+      margin-right:2px;
+      color:var(--accent-1);
+      font-size:14px;
+      transition: transform .18s ease, color .18s ease;
     }
-
-    details[open] summary::before {
-      content: '\f106';
-      color: var(--accent-secondary);
-    }
-
-    details[open] summary {
-      color: var(--accent-primary);
-      background: linear-gradient(90deg, rgba(124, 58, 237, 0.1), transparent);
-    }
+    details[open] summary::before { content: '\f106'; color:var(--accent-2); transform:rotate(0deg); }
+    details[open] summary { background: linear-gradient(90deg, rgba(124,58,237,0.06), transparent); color:var(--accent-1); }
 
     .section-content {
-      margin-top: 0;
-      padding: 0 20px 20px;
-      font-size: 14px;
-      line-height: 1.6;
-      color: var(--text-secondary);
-      animation: slideIn 0.3s ease-out;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+      padding: 10px 16px 18px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.6;
+      border-top:1px solid rgba(255,255,255,0.01);
+      max-height:0;
+      overflow:hidden;
+      transition: max-height .35s ease, padding .25s ease;
+    }
+    details[open] .section-content { max-height:1200px; }
+
+    ul { margin:12px 0 12px 18px; padding:0; list-style:none; }
+    li { margin-bottom:10px; padding-left:24px; position:relative; color:var(--muted); }
+    li::before {
+      content:'\f058';
+      font-family:"Font Awesome 6 Free";
+      font-weight:900;
+      position:absolute; left:0; top:1px; color:var(--accent-1); font-size:10px;
     }
 
-    details[open] .section-content {
-      max-height: 1000px;
-      animation: slideIn 0.4s ease-out;
-    }
+    code { background: rgba(255,255,255,0.03); padding:4px 8px; border-radius:8px; font-family: monospace; font-size:13px; }
 
-    @keyframes slideIn {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    ul {
-      margin: 12px 0 12px 20px;
-      list-style-type: none;
-    }
-
-    ul li {
-      position: relative;
-      padding-left: 20px;
-      margin-bottom: 8px;
-      color: var(--text-secondary);
-    }
-
-    ul li::before {
-      content: '\f058';
-      font-family: 'Font Awesome 6 Free';
-      font-weight: 900;
-      color: var(--accent-primary);
-      position: absolute;
-      left: 0;
-      font-size: 10px;
-    }
-
-    .small {
-      font-size: 13px;
-      color: var(--text-muted);
-    }
-
-    /* Footer */
     footer {
-      margin-top: 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      padding-top: 20px;
-      border-top: 1px solid var(--border-light);
+      margin-top:18px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      color:var(--muted);
+      font-size:13px;
+      border-top:1px solid rgba(255,255,255,0.02);
+      padding-top:12px;
     }
 
-    /* Responsive */
-    @media (max-width: 480px) {
-      .container { padding: 16px 12px; }
-      header { padding: 14px; }
-      .card { padding: 16px; }
-      summary { font-size: 15px; padding: 14px 16px; }
-      .section-content { padding: 0 16px 16px; font-size: 13px; }
-      .meta { flex-direction: column; align-items: flex-start; gap: 12px; }
-      .btns { width: 100%; justify-content: center; }
-      footer { flex-direction: column; gap: 12px; text-align: center; }
+    .small { font-size:13px; color:var(--muted); }
+
+    /* responsive adjustments */
+    @media (max-width:720px) {
+      .header { padding:12px; gap:12px; }
+      .logo-wrap { width:56px; height:56px; }
+      .head-text h1 { font-size:16px; }
+      .last-updated { padding:7px 10px; font-size:12px; }
+      .top-meta { flex-direction:column; align-items:flex-start; gap:10px; }
+      .actions { width:100%; justify-content:space-between; }
+      footer { flex-direction:column; gap:10px; text-align:center; align-items:center; }
     }
 
-    @media (max-width: 360px) {
-      .logo { width: 48px; height: 48px; font-size: 18px; }
-      header h1 { font-size: 16px; }
+    @media (max-width:420px) {
+      .page { padding:12px; }
+      .logo-wrap { width:52px; height:52px; }
+      summary { padding:12px; font-size:14px; }
+      .section-content { padding:10px 12px 14px; font-size:13px; }
     }
 
-    /* Scrollbar */
-    ::-webkit-scrollbar {
-      width: 6px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: var(--bg-secondary);
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: var(--accent-primary);
-      border-radius: 3px;
+    /* subtle decorative shapes - non-intrusive */
+    .decor {
+      position:absolute; right:-80px; top:-60px; width:260px; height:260px; opacity:0.06; filter: blur(18px);
+      background: conic-gradient(from 120deg, var(--accent-2), var(--accent-1), var(--accent-3));
+      border-radius:50%;
+      pointer-events:none;
+      z-index:0;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header aria-label="Privacy policy header">
-      <div class="logo" aria-hidden="true">CB</div>
-      <div style="flex:1">
+  <div class="decor" aria-hidden="true"></div>
+
+  <div class="page">
+    <header class="header" aria-label="Privacy policy header">
+      <div class="logo-wrap" aria-hidden="true"><div class="logo">CB</div></div>
+
+      <div class="head-text">
         <h1>Privacy Policy — CampusBus</h1>
-        <p class="small">Owned and operated by <strong>Aditya Barman</strong> • <a href="mailto:rishcrets@gmail.com" style="color:inherit;text-decoration:underline">rishcrets@gmail.com</a></p>
+        <p class="small">Owned and operated by <strong>Aditya Barman</strong> • <a class="email-link" href="mailto:rishcrets@gmail.com">rishcrets@gmail.com</a></p>
       </div>
-      <div style="text-align:right">
-        <div class="pill">Last updated<br><strong style="font-size:12px">Nov 3, 2025</strong></div>
+
+      <div class="header-actions">
+        <div class="last-updated" aria-hidden="true">Last updated<br><strong style="font-size:12px">Nov 5, 2025</strong></div>
       </div>
     </header>
 
+    <div class="accent-bar" aria-hidden="true"></div>
+
     <main class="card" id="policy">
-      <div class="meta">
-        <div style="flex:1">
-          <p class="small">CampusBus provides campus bus-tracking and related services (live bus locations, ETA, schedules, optional word game/leaderboard). Below: what we collect, why, retention, and your rights.</p>
+      <div class="top-meta">
+        <div class="desc">
+          <div class="small">CampusBus provides campus bus-tracking and related services (live bus locations, ETA, schedules, optional word game/leaderboard). Below is a clear summary of what we collect, why, retention, and your rights.</div>
         </div>
-        <div class="btns" aria-hidden="false">
+        <div class="actions" aria-hidden="false">
           <button class="btn" id="copyEmailBtn" title="Copy contact email"><i class="fas fa-copy"></i> Copy email</button>
+          <button class="btn" id="printBtn" title="Print policy"><i class="fas fa-print"></i> Print</button>
         </div>
       </div>
 
-      <!-- Accordion sections: mobile-first -->
-      <div class="accordion" role="region" aria-label="Privacy sections">
-
+      <section class="accordion" aria-label="Privacy sections">
         <details open>
           <summary>1. Overview</summary>
           <div class="section-content">
@@ -371,28 +283,29 @@
           <div class="section-content">
             <strong>Account &amp; identity</strong>
             <ul>
-              <li>Email (from Google Sign-In) and <code>user_id</code>.</li>
-              <li>Optional: full_name and phone only if the user provides them (profile completion).</li>
+              <li><strong>Email &amp; password credentials:</strong> Users create an account with an email and a password. We never store plaintext passwords — passwords are stored only in securely hashed &amp; salted form (server-side). Use a strong, unique password.</li>
+              <li><strong>user_id:</strong> unique auth identifier for your account.</li>
+              <li><strong>Optional:</strong> full_name and phone only if the user provides them (e.g., profile completion) — used to personalize the experience and show leaderboard names.</li>
             </ul>
 
             <strong>Location</strong>
             <ul>
-              <li>Driver/bus locations (real-time via HiveMQ/MQTT). We <em>only</em> store the last known location and overwrite it with newer updates — no historical archive.</li>
-              <li>Students' device location is not collected unless they opt-in to share it in-app; even then it's not stored persistently unless explicitly requested.</li>
+              <li><strong>Driver / bus locations:</strong> real-time GPS coordinates for buses (via HiveMQ/MQTT). We store only the <em>last known</em> bus location and overwrite it on each update — we do not maintain a historical route archive.</li>
+              <li><strong>Student device location:</strong> only collected if the student explicitly opts-in to share their location within the app (for example, to display their own position). Even when opted-in, student location is not stored persistently unless the user explicitly requests persistent storage.</li>
             </ul>
 
             <strong>Files / uploads</strong>
             <ul>
-              <li>Profile photos or media in feedback/reports (only if uploaded by user).</li>
+              <li>Profile photos or media submitted with feedback/reports (only if uploaded by the user). These help us investigate issues and may be retained per the retention rules below.</li>
             </ul>
 
             <strong>Diagnostics &amp; logs</strong>
             <ul>
-              <li>Device basic info, IP, timestamps and crash logs for debugging and security.</li>
+              <li>Basic device info, IP addresses, timestamps and crash logs to diagnose issues, improve stability, and protect platform security.</li>
             </ul>
 
             <strong>Third-party services</strong>
-            <p class="small">Mapbox (maps/tiles), HiveMQ/MQTT (realtime), and Supabase (auth &amp; DB) process data on our behalf.</p>
+            <p class="small">We rely on Mapbox (maps/tiles), HiveMQ/MQTT (real-time messaging), and Supabase (authentication &amp; database). These providers process certain data on our behalf to operate the service.</p>
           </div>
         </details>
 
@@ -400,11 +313,11 @@
           <summary>3. Why we collect it</summary>
           <div class="section-content">
             <ul>
-              <li>Provide live bus locations, ETA and routing</li>
-              <li>Store account, leaderboard and game scores</li>
-              <li>Accept feedback/reports (with optional photo)</li>
-              <li>Improve &amp; secure the service (diagnostics)</li>
-              <li>Communicate important notifications</li>
+              <li>Provide live bus locations, ETAs and routing information.</li>
+              <li>Enable account features, leaderboards, and game scores.</li>
+              <li>Receive feedback/reports (with optional photo) to act on issues.</li>
+              <li>Diagnose and fix problems, and protect user safety (diagnostics &amp; logs).</li>
+              <li>Send important service notifications (e.g., app announcements).</li>
             </ul>
           </div>
         </details>
@@ -413,9 +326,9 @@
           <summary>4. Sharing &amp; disclosures</summary>
           <div class="section-content">
             <ul>
-              <li>We do not sell personal data.</li>
-              <li>We share data with Mapbox, HiveMQ, and Supabase only as needed to operate the service.</li>
-              <li>We disclose user data only if legally required (e.g., court order) or to protect safety/security.</li>
+              <li>We do not sell personal data to third parties.</li>
+              <li>We share data with Mapbox, HiveMQ, and Supabase only as needed to provide the service.</li>
+              <li>We will disclose information only when legally required (e.g., court orders) or to protect safety/security.</li>
             </ul>
           </div>
         </details>
@@ -424,19 +337,19 @@
           <summary>5. Retention</summary>
           <div class="section-content">
             <ul>
-              <li><strong>Bus last-location:</strong> only last known location kept; overwritten on each update.</li>
-              <li><strong>Profile &amp; account info:</strong> retained while the account exists; removed on account deletion request.</li>
-              <li><strong>Uploaded photos:</strong> retained for <strong>90 days</strong> (or until user asks for deletion).</li>
-              <li><strong>Logs &amp; diagnostics:</strong> retained <strong>30–90 days</strong> depending on type.</li>
+              <li><strong>Bus last-location:</strong> only the most recent location is stored and overwritten. No historical archive by default.</li>
+              <li><strong>Profile &amp; account info:</strong> email, user_id, name, phone are retained while the account exists; removed on account deletion request.</li>
+              <li><strong>Uploaded photos:</strong> retained for <strong>90 days</strong> by default (or until the user requests deletion).</li>
+              <li><strong>Logs &amp; diagnostics:</strong> retained for <strong>30–90 days</strong> depending on log type.</li>
             </ul>
-            <p class="small">(Retention values are server-configurable.)</p>
+            <p class="small">(Retention windows are server-configurable and can be adjusted for compliance or legal requests.)</p>
           </div>
         </details>
 
         <details>
           <summary>6. Security</summary>
           <div class="section-content">
-            <p>We use TLS/HTTPS for all network traffic. Server access is restricted and credentials are rotated periodically. Do not embed secret/service keys in the app — prefer server-side secrets and short-lived credentials.</p>
+            <p>All traffic is encrypted via TLS/HTTPS. Passwords are never stored in plaintext — we store only hashed &amp; salted credentials on the server. Server access is restricted, and secrets/keys should be stored server-side (avoid embedding them in app builds). Credentials are rotated periodically as a best practice.</p>
           </div>
         </details>
 
@@ -444,9 +357,9 @@
           <summary>7. Your choices &amp; rights</summary>
           <div class="section-content">
             <ul>
-              <li>Revoke/grant location permission via device settings anytime.</li>
-              <li>Request deletion of your account/data by contacting <a href="mailto:rishcrets@gmail.com">rishcrets@gmail.com</a>.</li>
-              <li>Request a copy of your personal data at <a href="mailto:rishcrets@gmail.com">rishcrets@gmail.com</a>.</li>
+              <li>Revoke or grant location permission anytime via your device settings.</li>
+              <li>Request deletion of your account and personal data by contacting <a href="mailto:rishcrets@gmail.com">rishcrets@gmail.com</a>.</li>
+              <li>Request a copy of your personal data by contacting <a href="mailto:rishcrets@gmail.com">rishcrets@gmail.com</a>.</li>
             </ul>
           </div>
         </details>
@@ -454,79 +367,55 @@
         <details>
           <summary>8. Children</summary>
           <div class="section-content">
-            <p>The app is intended for college/university students and staff. We do not knowingly collect data from children under the applicable legal age (e.g., under 13). If you believe a child’s data was collected, contact <a href="mailto:rishcrets@gmail.com">rishcrets@gmail.com</a>.</p>
+            <p>This app is intended for college/university students and staff. We do not knowingly collect information from children under the applicable legal age (e.g., under 13). If you believe a child’s information was collected, contact <a href="mailto:rishcrets@gmail.com">rishcrets@gmail.com</a>.</p>
           </div>
         </details>
 
         <details>
           <summary>9. Changes</summary>
           <div class="section-content">
-            <p>We will post updates here with a new "Last updated" date. Significant changes will be announced in-app.</p>
+            <p>We will post updates to this page and change the “Last updated” date when we make material changes. Significant changes may also be announced in-app.</p>
           </div>
         </details>
-
-      </div>
+      </section>
 
       <footer>
         <div class="small">Contact: <a href="mailto:rishcrets@gmail.com">rishcrets@gmail.com</a></div>
+        <div class="small">CampusBus — making campus travel predictable, reliable and stress-free.</div>
       </footer>
     </main>
 
-    <p style="font-size:12px;color:var(--text-muted);margin-top:16px;text-align:center">CampusBus makes your daily travel predictable, reliable and stress-free.</p>
+    <p style="font-size:12px;color:var(--muted);margin-top:14px;text-align:center">Need a light theme, GDPR-specific wording, or a small consent banner for first-run users? I can add that next.</p>
   </div>
 
   <script>
-    // Utilities: copy email, print, download
+    // copy email
     const email = 'rishcrets@gmail.com';
-    document.getElementById('copyEmailBtn').addEventListener('click', async () => {
+    document.getElementById('copyEmailBtn').addEventListener('click', async (ev) => {
+      const btn = ev.currentTarget;
       try {
         await navigator.clipboard.writeText(email);
-        const btn = event.target;
-        const originalText = btn.innerHTML;
-        btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
-        btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
-        setTimeout(() => {
-          btn.innerHTML = originalText;
-          btn.style.background = '';
-        }, 2000);
-      } catch (e) {
+        const original = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-check"></i> Copied';
+        btn.style.background = 'linear-gradient(90deg,#10b981,#059669)';
+        setTimeout(() => { btn.innerHTML = original; btn.style.background = ''; }, 1800);
+      } catch (err) {
         prompt('Copy this email:', email);
       }
     });
 
+    // print
+    document.getElementById('printBtn').addEventListener('click', () => window.print());
 
-
-
-    // Enhanced accordion: close others when one opens, with better mobile scroll
+    // close other details when one opens & mobile-friendly scrolling
     document.querySelectorAll('details').forEach(d => {
-      d.addEventListener('toggle', e => {
+      d.addEventListener('toggle', () => {
         if (d.open) {
-          document.querySelectorAll('details').forEach(dd => {
-            if (dd !== d) dd.open = false;
-          });
-          // Smooth scroll into view for small screens
-          setTimeout(() => {
-            d.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }, 200);
+          document.querySelectorAll('details').forEach(dd => { if (dd !== d) dd.open = false; });
+          setTimeout(()=> d.scrollIntoView({behavior:'smooth', block:'start'}), 200);
         }
       });
-    });
-
-    // Add intersection observer for fade-in on scroll (for sections)
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.animationPlayState = 'running';
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('details').forEach(detail => {
-      observer.observe(detail);
-      detail.style.animationPlayState = 'paused';
-      detail.style.animation = 'fadeInUp 0.6s ease-out forwards';
     });
   </script>
 </body>
 </html>
-
