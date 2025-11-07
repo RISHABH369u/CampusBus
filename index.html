@@ -253,7 +253,7 @@
       </div>
 
       <div class="header-actions">
-        <div class="last-updated" aria-hidden="true">Last updated<br><strong style="font-size:12px">Nov 5, 2025</strong></div>
+        <div class="last-updated" aria-hidden="true">Last updated<br><strong style="font-size:12px">Nov 8, 2025</strong></div>
       </div>
     </header>
 
@@ -290,7 +290,7 @@
 
             <strong>Location</strong>
             <ul>
-              <li><strong>Driver / bus locations:</strong> real-time GPS coordinates for buses (via HiveMQ/MQTT). We store only the <em>last known</em> bus location and overwrite it on each update — we do not maintain a historical route archive.</li>
+              <li><strong>Driver / bus locations:</strong> real-time GPS coordinates for buses (via HiveMQ/MQTT). we do not maintain a historical route archive.</li>
               <li><strong>Student device location:</strong> only collected if the student explicitly opts-in to share their location within the app (for example, to display their own position). Even when opted-in, student location is not stored persistently unless the user explicitly requests persistent storage.</li>
             </ul>
 
@@ -337,8 +337,8 @@
           <summary>5. Retention</summary>
           <div class="section-content">
             <ul>
-              <li><strong>Bus last-location:</strong> only the most recent location is stored and overwritten. No historical archive by default.</li>
-              <li><strong>Profile &amp; account info:</strong> email, user_id, name, phone are retained while the account exists; removed on account deletion request.</li>
+              <li><strong>Bus last-location:</strong> No historical archive by default.</li>
+              <li><strong>Profile &amp; account info:</strong> email, user_id, name are retained while the account exists; removed on account deletion request.</li>
               <li><strong>Uploaded photos:</strong> retained for <strong>90 days</strong> by default (or until the user requests deletion).</li>
               <li><strong>Logs &amp; diagnostics:</strong> retained for <strong>30–90 days</strong> depending on log type.</li>
             </ul>
@@ -419,6 +419,7 @@
   </script>
 </body>
 </html>
+
 
 
 
