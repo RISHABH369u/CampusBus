@@ -276,13 +276,17 @@
 <!-- Modals & JS behavior -->
 <script>
   const email = 'rishcrets@gmail.com';
-  // quick helpers to open mail compose with prefilled subject & body
+
   function openMail(subject, body){
-    location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${body}`;
+  }
+
+  function formatBody(lines){
+    return encodeURIComponent(lines.join('\r\n'));
   }
 
   document.getElementById('requestDeleteBtn').addEventListener('click', ()=> {
-    const body = [
+    const body = formatBody([
       "Hello,",
       "",
       "I request deletion of my CampusBus account. Please find the details below:",
@@ -292,12 +296,12 @@
       "Please confirm what verification you need from me and the expected timeline.",
       "",
       "Thanks."
-    ].join('\\n');
+    ]);
     openMail('Account deletion request — CampusBus', body);
   });
 
   document.getElementById('requestExportBtn').addEventListener('click', ()=> {
-    const body = [
+    const body = formatBody([
       "Hello,",
       "",
       "I request an export of my personal data from CampusBus. Please provide the machine-readable archive.",
@@ -305,11 +309,22 @@
       "user_id (if known):",
       "",
       "Thanks."
-    ].join('\\n');
+    ]);
     openMail('Data export request — CampusBus', body);
   });
 
-  document.getElementById('contactBtn').addEventListener('click', ()=> openMail('Privacy question — CampusBus','Hello,\\n\\nI have a question about the privacy policy.\\n\\nRegards.'));
+  document.getElementById('contactBtn').addEventListener('click', ()=> {
+    const body = formatBody([
+      "Hello,",
+      "",
+      "I have a question about the privacy policy.",
+      "",
+      "Regards."
+    ]);
+    openMail('Privacy question — CampusBus', body);
+  });
 </script>
+
 </body>
 </html>
+
