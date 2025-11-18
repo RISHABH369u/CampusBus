@@ -1,425 +1,315 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <title>Privacy Policy — CampusBus</title>
-  <meta name="description" content="Privacy Policy for CampusBus." />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    :root {
-      --bg-primary: #071028;
-      --bg-secondary: #0b1220;
-      --glass: rgba(255,255,255,0.03);
-      --accent-1: #7c3aed;
-      --accent-2: #a78bfa;
-      --accent-3: #06b6d4;
-      --text: #e6f0ff;
-      --muted: #9fb0c9;
-      --card-border: rgba(255,255,255,0.04);
-      --radius: 14px;
-      --shadow: 0 8px 28px rgba(2,6,23,0.6);
-      color-scheme: dark;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html,body { height:100%; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial; background:
-      radial-gradient(800px 300px at 10% 10%, rgba(124,58,237,0.06), transparent 8%),
-      linear-gradient(180deg,var(--bg-primary),var(--bg-secondary));
-      color:var(--text); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
-    }
-
-    .page {
-      max-width: 980px;
-      margin: 20px auto;
-      padding: 18px;
-    }
-
-    /* Header - enhanced */
-    .header {
-      position: sticky;
-      top: 16px;
-      z-index: 40;
-      display:flex;
-      align-items:center;
-      gap:14px;
-      padding:14px;
-      border-radius:16px;
-      background: linear-gradient(90deg, rgba(123,58,237,0.08), rgba(6,182,212,0.03));
-      border: 1px solid rgba(255,255,255,0.03);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(8px) saturate(140%);
-      transition: transform .28s ease;
-    }
-
-    .logo-wrap {
-      width:64px;
-      height:64px;
-      border-radius:12px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background: linear-gradient(135deg,var(--accent-1),var(--accent-2));
-      box-shadow: 0 8px 30px rgba(124,58,237,0.16);
-      transform-origin:center;
-      transition: transform .45s cubic-bezier(.2,.8,.2,1);
-    }
-
-    .logo-wrap:hover { transform: rotate(6deg) scale(1.04); }
-    .logo {
-      font-weight:800;
-      letter-spacing:0.6px;
-      color:white;
-      font-size:20px;
-    }
-
-    .head-text { flex:1; min-width:0; }
-    .head-text h1 {
-      font-size:18px;
-      line-height:1.05;
-      margin-bottom:6px;
-      font-weight:700;
-    }
-    .head-text p {
-      font-size:13px;
-      color:var(--muted);
-      margin:0;
-      display:flex;
-      gap:8px;
-      align-items:center;
-      flex-wrap:wrap;
-    }
-    .email-link { text-decoration:underline; color:inherit; }
-
-    .header-actions {
-      display:flex;
-      gap:8px;
-      align-items:center;
-    }
-
-    .last-updated {
-      background: linear-gradient(90deg,var(--accent-1),var(--accent-2));
-      color:white;
-      padding:8px 12px;
-      border-radius:999px;
-      font-weight:700;
-      font-size:12px;
-      box-shadow: 0 6px 18px rgba(124,58,237,0.12);
-      text-align:center;
-    }
-
-    /* header accent bar */
-    .accent-bar {
-      width:100%;
-      height:6px;
-      margin-top:10px;
-      border-radius:999px;
-      background: linear-gradient(90deg,var(--accent-1),var(--accent-3),var(--accent-2));
-      opacity:0.9;
-    }
-
-    /* Card body */
-    .card {
-      margin-top:18px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border-radius:14px;
-      padding:18px;
-      border:1px solid var(--card-border);
-      box-shadow: 0 6px 20px rgba(3,8,20,0.6);
-    }
-
-    .top-meta {
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      margin-bottom:14px;
-    }
-    .top-meta .desc { color:var(--muted); font-size:14px; line-height:1.5; }
-    .actions { display:flex; gap:10px; }
-
-    .btn {
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:10px 12px;
-      font-weight:700;
-      border-radius:10px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
-      border: 1px solid rgba(255,255,255,0.03);
-      cursor:pointer;
-      transition: all .2s ease;
-      color:var(--text);
-      font-size:13px;
-    }
-    .btn i { opacity:0.9; }
-    .btn:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(12,10,40,0.45); background:linear-gradient(90deg,var(--accent-1),var(--accent-2)); color:white; }
-
-    /* Accordion + sections */
-    .accordion { margin-top:12px; }
-    details { margin-bottom:12px; border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,0.02); background:rgba(255,255,255,0.02); transition: all .25s ease; }
-    summary {
-      list-style:none; cursor:pointer; padding:14px 16px; display:flex; align-items:center; gap:12px; font-weight:700; font-size:15px;
-    }
-    summary::marker { display:none; }
-    summary::before {
-      content: '\f107';
-      font-family: "Font Awesome 6 Free";
-      font-weight:900;
-      margin-right:2px;
-      color:var(--accent-1);
-      font-size:14px;
-      transition: transform .18s ease, color .18s ease;
-    }
-    details[open] summary::before { content: '\f106'; color:var(--accent-2); transform:rotate(0deg); }
-    details[open] summary { background: linear-gradient(90deg, rgba(124,58,237,0.06), transparent); color:var(--accent-1); }
-
-    .section-content {
-      padding: 10px 16px 18px;
-      color:var(--muted);
-      font-size:14px;
-      line-height:1.6;
-      border-top:1px solid rgba(255,255,255,0.01);
-      max-height:0;
-      overflow:hidden;
-      transition: max-height .35s ease, padding .25s ease;
-    }
-    details[open] .section-content { max-height:1200px; }
-
-    ul { margin:12px 0 12px 18px; padding:0; list-style:none; }
-    li { margin-bottom:10px; padding-left:24px; position:relative; color:var(--muted); }
-    li::before {
-      content:'\f058';
-      font-family:"Font Awesome 6 Free";
-      font-weight:900;
-      position:absolute; left:0; top:1px; color:var(--accent-1); font-size:10px;
-    }
-
-    code { background: rgba(255,255,255,0.03); padding:4px 8px; border-radius:8px; font-family: monospace; font-size:13px; }
-
-    footer {
-      margin-top:18px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:12px;
-      color:var(--muted);
-      font-size:13px;
-      border-top:1px solid rgba(255,255,255,0.02);
-      padding-top:12px;
-    }
-
-    .small { font-size:13px; color:var(--muted); }
-
-    /* responsive adjustments */
-    @media (max-width:720px) {
-      .header { padding:12px; gap:12px; }
-      .logo-wrap { width:56px; height:56px; }
-      .head-text h1 { font-size:16px; }
-      .last-updated { padding:7px 10px; font-size:12px; }
-      .top-meta { flex-direction:column; align-items:flex-start; gap:10px; }
-      .actions { width:100%; justify-content:space-between; }
-      footer { flex-direction:column; gap:10px; text-align:center; align-items:center; }
-    }
-
-    @media (max-width:420px) {
-      .page { padding:12px; }
-      .logo-wrap { width:52px; height:52px; }
-      summary { padding:12px; font-size:14px; }
-      .section-content { padding:10px 12px 14px; font-size:13px; }
-    }
-
-    /* subtle decorative shapes - non-intrusive */
-    .decor {
-      position:absolute; right:-80px; top:-60px; width:260px; height:260px; opacity:0.06; filter: blur(18px);
-      background: conic-gradient(from 120deg, var(--accent-2), var(--accent-1), var(--accent-3));
-      border-radius:50%;
-      pointer-events:none;
-      z-index:0;
-    }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>Privacy Policy — CampusBus</title>
+<meta name="description" content="Privacy Policy for CampusBus — live campus bus tracking for students & staff." />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  :root{
+    --bg-1:#071028; --bg-2:#0b1220;
+    --accent-1:#7c3aed; --accent-2:#06b6d4; --accent-3:#a78bfa;
+    --muted:#9fb0c9; --text:#e6f0ff;
+    --glass: rgba(255,255,255,0.02);
+    --card-border: rgba(255,255,255,0.03);
+    --radius:14px;
+    --shadow: 0 10px 30px rgba(2,6,23,0.6);
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:
+    radial-gradient(800px 300px at 10% 10%, rgba(124,58,237,0.06), transparent 8%),
+    linear-gradient(180deg,var(--bg-1),var(--bg-2)); color:var(--text); -webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:980px;margin:18px auto;padding:16px}
+  /* header */
+  .header{position:sticky;top:14px;z-index:20;display:flex;gap:14px;align-items:center;padding:14px;border-radius:16px;
+    background: linear-gradient(90deg, rgba(124,58,237,0.08), rgba(6,182,212,0.03)); border:1px solid var(--card-border); box-shadow:var(--shadow);
+    backdrop-filter: blur(8px) saturate(140%); transition:transform .25s ease}
+  .logo{width:64px;height:64px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,var(--accent-1),var(--accent-3)); font-weight:800; font-size:20px; color:white;
+    box-shadow: 0 8px 30px rgba(124,58,237,0.14); transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+  .logo:hover{transform:rotate(5deg) scale(1.03)}
+  .head{flex:1;min-width:0}
+  .head h1{margin:0;font-size:18px;line-height:1.05}
+  .head p{margin:6px 0 0 0;color:var(--muted);font-size:13px}
+  .actions{display:flex;gap:8px;align-items:center}
+  .badge{background:linear-gradient(90deg,var(--accent-1),var(--accent-3));padding:8px 12px;border-radius:999px;font-weight:700;font-size:12px;color:white}
+  .accent-bar{height:6px;border-radius:999px;margin-top:10px;background:linear-gradient(90deg,var(--accent-1),var(--accent-2),var(--accent-3));opacity:0.95}
+  /* card */
+  .card{margin-top:16px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border-radius:12px;padding:18px;border:1px solid var(--card-border);box-shadow: 0 8px 30px rgba(3,8,20,0.6)}
+  .intro{display:flex;flex-direction:column;gap:12px;margin-bottom:8px}
+  .intro p{color:var(--muted);margin:0;font-size:14px}
+  .btns{display:flex;gap:10px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 12px;border-radius:10px;background:rgba(255,255,255,0.02);
+    border:1px solid rgba(255,255,255,0.03);cursor:pointer;font-weight:700;font-size:13px;color:var(--text);transition:all .18s ease}
+  .btn:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(12,10,40,0.45);background:linear-gradient(90deg,var(--accent-1),var(--accent-3));color:white}
+  /* sections */
+  section{margin-top:14px}
+  h2{font-size:16px;margin:0 0 10px 0}
+  .muted{color:var(--muted);font-size:14px;line-height:1.6}
+  details{margin-bottom:12px;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.02);background:var(--glass)}
+  summary{cursor:pointer;padding:12px 14px;display:flex;align-items:center;gap:10px;font-weight:700}
+  summary::before{content:'\f107';font-family:'Font Awesome 6 Free';font-weight:900;color:var(--accent-1);margin-right:4px}
+  details[open] summary::before{content:'\f106';color:var(--accent-3)}
+  .content{padding:10px 14px 16px;color:var(--muted);font-size:14px;line-height:1.6}
+  ul{margin:10px 0 10px 18px;padding:0;list-style:none}
+  li{position:relative;padding-left:22px;margin-bottom:10px}
+  li::before{content:'\f058';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;left:0;top:1px;color:var(--accent-1);font-size:10px}
+  code{background:rgba(255,255,255,0.03);padding:3px 6px;border-radius:6px;font-family:monospace;font-size:13px;color:var(--text)}
+  /* highlighted box */
+  .note{background:linear-gradient(180deg, rgba(124,58,237,0.06), rgba(6,182,212,0.02));padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02);color:var(--text);font-weight:600}
+  /* rights table */
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .card-small{background:rgba(255,255,255,0.01);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
+  .muted-small{color:var(--muted);font-size:13px}
+  /* footer */
+  footer{margin-top:18px;border-top:1px solid rgba(255,255,255,0.02);padding-top:12px;display:flex;justify-content:space-between;align-items:center;gap:12px;color:var(--muted);font-size:13px}
+  /* responsive */
+  @media (max-width:720px){
+    .grid{grid-template-columns:1fr}
+    .header{padding:12px}
+    .logo{width:56px;height:56px}
+    .badge{padding:7px 10px;font-size:11px}
+  }
+  @media (max-width:420px){
+    .wrap{padding:8px}
+    summary{font-size:14px;padding:10px}
+    .content{padding:8px 12px 12px;font-size:13px}
+    .logo{width:52px;height:52px}
+  }
+  /* subtle animation on reveal */
+  details{transform-origin:top center;transition:transform .22s ease}
+  details[open]{transform:translateY(2px)}
+  /* decorative */
+  .decor{position:absolute;right:-100px;top:-80px;width:320px;height:320px;opacity:0.06;filter: blur(18px);
+    background: conic-gradient(from 120deg,var(--accent-3),var(--accent-1),var(--accent-2));border-radius:50%;pointer-events:none;z-index:0}
+</style>
 </head>
 <body>
-  <div class="decor" aria-hidden="true"></div>
+<div class="decor" aria-hidden="true"></div>
 
-  <div class="page">
-    <header class="header" aria-label="Privacy policy header">
-      <div class="logo-wrap" aria-hidden="true"><div class="logo">CB</div></div>
+<div class="wrap">
+  <header class="header" aria-label="CampusBus Privacy Header">
+    <div class="logo" aria-hidden="true">CB</div>
+    <div class="head">
+      <h1>Privacy Policy — CampusBus</h1>
+      <p>Owned &amp; operated by <strong>Aditya Barman</strong> • <a href="mailto:rishcrets@gmail.com">rishcrets@gmail.com</a></p>
+    </div>
+    <div class="actions">
+      <div class="badge" aria-hidden="true">Last updated<br><strong style="font-size:12px">Nov 19, 2025</strong></div>
+    </div>
+  </header>
 
-      <div class="head-text">
-        <h1>Privacy Policy — CampusBus</h1>
-        <p class="small">Owned and operated by <strong>Aditya Barman</strong> • <a class="email-link" href="mailto:rishcrets@gmail.com">rishcrets@gmail.com</a></p>
+  <div class="accent-bar" aria-hidden="true"></div>
+
+  <main class="card" role="main">
+    <div class="intro">
+      <p class="muted">CampusBus is a campus bus tracking and schedule app for university students &amp; staff. We prioritise privacy: minimal data collection, secure storage, and clear deletion/export processes.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+        <button class="btn" id="requestDeleteBtn"><i class="fas fa-user-slash"></i> Request account deletion</button>
+        <button class="btn" id="requestExportBtn"><i class="fas fa-file-export"></i> Request data export</button>
+        <button class="btn" id="contactBtn"><i class="fas fa-envelope"></i> Contact: rishcrets@gmail.com</button>
       </div>
+    </div>
 
-      <div class="header-actions">
-        <div class="last-updated" aria-hidden="true">Last updated<br><strong style="font-size:12px">Nov 8, 2025</strong></div>
+    <!-- CORE POLICY -->
+    <section>
+      <h2>1. Summary</h2>
+      <div class="content">
+        <p class="muted">CampusBus provides live bus locations, ETAs, route maps, schedules and optional in-app game features. This policy explains what we collect, why, how long we keep it, and how you can access or delete your data.</p>
       </div>
-    </header>
+    </section>
 
-    <div class="accent-bar" aria-hidden="true"></div>
+    <section>
+      <h2>2. Data we collect</h2>
+      <div class="content">
+        <ul>
+          <li><strong>Account credentials:</strong> email and password. We never store plaintext passwords.</li>
+          <li><strong>user_id:</strong> unique auth identifier used to link your account to app data.</li>
+          <li><strong>Optional profile fields:</strong> full_name, profile photo — only if you provide them.</li>
+          <li><strong>Driver / bus locations:</strong> real-time GPS coordinates for buses (ingested via HiveMQ/MQTT).No location is stored.</li>
+          <li><strong>Student device location:</strong> only if you explicitly enable it in-app. Not stored persistently unless you request it.</li>
+          <li><strong>Uploads:</strong> photos or media you attach to reports/feedback (retention window below).</li>
+          <li><strong>Diagnostics:</strong> crash logs, IP addresses, timestamps and basic device metadata for security and debugging.</li>
+        </ul>
+      </div>
+    </section>
 
-    <main class="card" id="policy">
-      <div class="top-meta">
-        <div class="desc">
-          <div class="small">CampusBus provides campus bus-tracking and related services (live bus locations, ETA, schedules, optional word game/leaderboard). Below is a clear summary of what we collect, why, retention, and your rights.</div>
+    <section>
+      <h2>3. Why we collect data (purposes)</h2>
+      <div class="content">
+        <ul>
+          <li>Provide live bus location &amp; ETA features.</li>
+          <li>Show route maps, schedules and driver/bus info.</li>
+          <li>Store leaderboard &amp; gameplay scores (optional).</li>
+          <li>Accept and investigate feedback/reports (with optional photos).</li>
+   <!--       <li>Improve and secure the service (analytics limited to diagnostics).</li> -->
+   <!--       <li>Send important in-app notifications.</li>  -->
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>4. Third-party services</h2>
+      <div class="content">
+        <p class="muted">We use third parties to operate the app. They process data on our behalf under contract:</p>
+        <ul>
+          <li><strong>Mapbox</strong> — map tiles and routing.</li>
+          <li><strong>HiveMQ / MQTT</strong> — real-time bus telemetry ingestion.</li>
+          <li><strong>Supabase</strong> — authentication and database hosting.</li>
+        </ul>
+        <p class="muted">We do not sell personal data. We only share the minimum necessary with these providers to deliver the service.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>5. Retention &amp; deletion policy (clear, actionable)</h2>
+      <div class="content">
+        <p class="muted">We keep data only as long as necessary and provide clear user controls to delete or export data.</p>
+
+        <div class="note" style="margin-top:10px">
+          <strong>How to request deletion (two options)</strong>
+          <ol style="margin:8px 0 0 18px;color:var(--text);font-weight:600">
+            <li>In-app: <em>Profile → Delete account</em> (recommended). The app will ask you to confirm and will send a deletion request to our servers.</li>
+            <li>By email: send a deletion request to <a href="mailto:rishcrets@gmail.com">rishcrets@gmail.com</a> with your account email and user_id (if known). See verification steps below.</li>
+          </ol>
         </div>
-        <div class="actions" aria-hidden="false">
-          <button class="btn" id="copyEmailBtn" title="Copy contact email"><i class="fas fa-copy"></i> Copy email</button>
-          <button class="btn" id="printBtn" title="Print policy"><i class="fas fa-print"></i> Print</button>
-        </div>
+
+        <h3 style="margin-top:12px">Deletion timeline</h3>
+        <ul>
+          <li><strong>Immediate deactivation:</strong> upon request we deactivate your account within 24 hours (you cannot sign in).</li>
+          <li><strong>Primary deletion:</strong> profile &amp; account records (email, profile, user_id, optional name/phone) are removed from live databases within <strong>90 days</strong>.</li>
+          <li><strong>Uploaded files:</strong> photos/media removed within <strong>30 days</strong> from active mails.</li>
+          <li><strong>Backups &amp; logs:</strong> backups and diagnostic logs are purged or irreversibly anonymized within <strong>90 days</strong> (shorter where operationally possible).</li>
+          <li><strong>Bus telemetry:</strong> No location is stored.</li>
+        </ul>
+
+        <h3>Verification (to prevent abuse)</h3>
+        <p class="muted">To process deletion requests we may ask for basic verification (confirm the account email and user_id) or reply to the account's registered email. We will not ask for sensitive credentials (password) via email.</p>
       </div>
+    </section>
 
-      <section class="accordion" aria-label="Privacy sections">
-        <details open>
-          <summary>1. Overview</summary>
-          <div class="section-content">
-            <p>CampusBus provides campus bus-tracking and related services (live bus locations, ETA, schedules, and an optional word game/leaderboard). This policy explains what information we collect, why, how long we keep it, and your rights.</p>
-          </div>
-        </details>
+    <section>
+      <h2>6. Data export / access</h2>
+      <div class="content">
+        <p class="muted">You can request a copy of your personal data (account info, optional profile, leaderboard scores, submitted reports). To request an export:</p>
+        <ol style="margin:8px 0 0 18px;color:var(--muted)">
+          <li>Use email <a href="mailto:rishcrets@gmail.com">rishcrets@gmail.com</a> with your account email and user_id; we will provide the export within <strong>7 business days</strong>.</li>
+        </ol>
+        <p class="muted">Exports exclude other users' personal data and only include data tied to your account.</p>
+      </div>
+    </section>
 
-        <details>
-          <summary>2. Data we collect</summary>
-          <div class="section-content">
-            <strong>Account &amp; identity</strong>
-            <ul>
-              <li><strong>Email &amp; password credentials:</strong> Users create an account with an email and a password. We never store plaintext passwords — passwords are stored only in securely hashed &amp; salted form (server-side). Use a strong, unique password.</li>
-              <li><strong>user_id:</strong> unique auth identifier for your account.</li>
-              <li><strong>Optional:</strong> full_name and phone only if the user provides them (e.g., profile completion) — used to personalize the experience and show leaderboard names.</li>
-            </ul>
+    <section>
+      <h2>7. Security</h2>
+      <div class="content">
+        <ul>
+          <li>All network traffic uses TLS/HTTPS.</li>
+          <li>Supabse Auth manages the Passwords &amp; We never store Password in plaintext.</li>
+          <li>Access to production data is limited to authorized personnel; API keys and secrets are stored server-side and rotated periodically.</li>
+          <li>We use standard industry measures to protect data, but no system is perfectly secure — report incidents to <a href="mailto:rishcrets@gmail.com">rishcrets@gmail.com</a>.</li>
+        </ul>
+      </div>
+    </section>
 
-            <strong>Location</strong>
-            <ul>
-              <li><strong>Driver / bus locations:</strong> real-time GPS coordinates for buses (via HiveMQ/MQTT). we do not maintain a historical route archive.</li>
-              <li><strong>Student device location:</strong> only collected if the student explicitly opts-in to share their location within the app (for example, to display their own position). Even when opted-in, student location is not stored persistently unless the user explicitly requests persistent storage.</li>
-            </ul>
-
-            <strong>Files / uploads</strong>
-            <ul>
-              <li>Profile photos or media submitted with feedback/reports (only if uploaded by the user). These help us investigate issues and may be retained per the retention rules below.</li>
-            </ul>
-
-            <strong>Diagnostics &amp; logs</strong>
-            <ul>
-              <li>Basic device info, IP addresses, timestamps and crash logs to diagnose issues, improve stability, and protect platform security.</li>
-            </ul>
-
-            <strong>Third-party services</strong>
-            <p class="small">We rely on Mapbox (maps/tiles), HiveMQ/MQTT (real-time messaging), and Supabase (authentication &amp; database). These providers process certain data on our behalf to operate the service.</p>
-          </div>
-        </details>
-
-        <details>
-          <summary>3. Why we collect it</summary>
-          <div class="section-content">
-            <ul>
-              <li>Provide live bus locations, ETAs and routing information.</li>
-              <li>Enable account features, leaderboards, and game scores.</li>
-              <li>Receive feedback/reports (with optional photo) to act on issues.</li>
-              <li>Diagnose and fix problems, and protect user safety (diagnostics &amp; logs).</li>
-              <li>Send important service notifications (e.g., app announcements).</li>
-            </ul>
-          </div>
-        </details>
-
-        <details>
-          <summary>4. Sharing &amp; disclosures</summary>
-          <div class="section-content">
-            <ul>
-              <li>We do not sell personal data to third parties.</li>
-              <li>We share data with Mapbox, HiveMQ, and Supabase only as needed to provide the service.</li>
-              <li>We will disclose information only when legally required (e.g., court orders) or to protect safety/security.</li>
-            </ul>
-          </div>
-        </details>
-
-        <details>
-          <summary>5. Retention</summary>
-          <div class="section-content">
-            <ul>
-              <li><strong>Bus last-location:</strong> No historical archive by default.</li>
-              <li><strong>Profile &amp; account info:</strong> email, user_id, name are retained while the account exists; removed on account deletion request.</li>
-              <li><strong>Uploaded photos:</strong> retained for <strong>90 days</strong> by default (or until the user requests deletion).</li>
-              <li><strong>Logs &amp; diagnostics:</strong> retained for <strong>30–90 days</strong> depending on log type.</li>
-            </ul>
-            <p class="small">(Retention windows are server-configurable and can be adjusted for compliance or legal requests.)</p>
-          </div>
-        </details>
-
-        <details>
-          <summary>6. Security</summary>
-          <div class="section-content">
-            <p>All traffic is encrypted via TLS/HTTPS. Passwords are never stored in plaintext — we store only hashed &amp; salted credentials on the server. Server access is restricted, and secrets/keys should be stored server-side (avoid embedding them in app builds). Credentials are rotated periodically as a best practice.</p>
-          </div>
-        </details>
-
-        <details>
-          <summary>7. Your choices &amp; rights</summary>
-          <div class="section-content">
-            <ul>
-              <li>Revoke or grant location permission anytime via your device settings.</li>
-              <li>Request deletion of your account and personal data by contacting <a href="mailto:rishcrets@gmail.com">rishcrets@gmail.com</a>.</li>
-              <li>Request a copy of your personal data by contacting <a href="mailto:rishcrets@gmail.com">rishcrets@gmail.com</a>.</li>
-            </ul>
-          </div>
-        </details>
-
-        <details>
-          <summary>8. Children</summary>
-          <div class="section-content">
-            <p>This app is intended for college/university students and staff. We do not knowingly collect information from children under the applicable legal age (e.g., under 13). If you believe a child’s information was collected, contact <a href="mailto:rishcrets@gmail.com">rishcrets@gmail.com</a>.</p>
-          </div>
-        </details>
-
-        <details>
-          <summary>9. Changes</summary>
-          <div class="section-content">
-            <p>We will post updates to this page and change the “Last updated” date when we make material changes. Significant changes may also be announced in-app.</p>
-          </div>
-        </details>
-      </section>
-
-      <footer>
-        <div class="small">Contact: <a href="mailto:rishcrets@gmail.com">rishcrets@gmail.com</a></div>
-        <div class="small">CampusBus — making campus travel predictable, reliable and stress-free.</div>
-      </footer>
-    </main>
-
-    <p style="font-size:12px;color:var(--muted);margin-top:14px;text-align:center">© CampusBus 2025, All rights reserved.</p>
+    <section>
+  <h2>8. Your Data Rights (India – DPDP Act)</h2>
+  <div class="content">
+    <div class="grid">
+      <div class="card-small">
+        <strong>Your rights under DPDP Act, 2023</strong>
+        <p class="muted-small">
+          As an Indian user, you have the right to:
+          <br>• Know how your data is used  
+          <br>• Request correction of inaccurate data  
+          <br>• Request deletion of your personal data  
+          <br>• Withdraw consent anytime  
+          <br>• Lodge a complaint with the Data Protection Board of India  
+        </p>
+      </div>
+      <div class="card-small">
+        <strong>How to exercise these rights</strong>
+        <p class="muted-small">
+          You can contact us at  
+          <a href="mailto:rishcrets@gmail.com">rishcrets@gmail.com</a>  
+          for any data-related requests.  
+          We will respond within reasonable timelines as per Indian regulations.
+        </p>
+      </div>
+    </div>
   </div>
+</section>
 
-  <script>
-    // copy email
-    const email = 'rishcrets@gmail.com';
-    document.getElementById('copyEmailBtn').addEventListener('click', async (ev) => {
-      const btn = ev.currentTarget;
-      try {
-        await navigator.clipboard.writeText(email);
-        const original = btn.innerHTML;
-        btn.innerHTML = '<i class="fas fa-check"></i> Copied';
-        btn.style.background = 'linear-gradient(90deg,#10b981,#059669)';
-        setTimeout(() => { btn.innerHTML = original; btn.style.background = ''; }, 1800);
-      } catch (err) {
-        prompt('Copy this email:', email);
-      }
-    });
 
-    // print
-    document.getElementById('printBtn').addEventListener('click', () => window.print());
+    <section>
+      <h2>9. Children</h2>
+      <div class="content">
+        <p class="muted">CampusBus is intended for college/university students and staff. We do not knowingly collect personal information from children under the applicable legal age (for example, under 13 in the U.S.). If you believe we have collected a child's data, contact <a href="mailto:rishcrets@gmail.com">rishcrets@gmail.com</a> and we will promptly investigate and remove the data where required.</p>
+      </div>
+    </section>
 
-    // close other details when one opens & mobile-friendly scrolling
-    document.querySelectorAll('details').forEach(d => {
-      d.addEventListener('toggle', () => {
-        if (d.open) {
-          document.querySelectorAll('details').forEach(dd => { if (dd !== d) dd.open = false; });
-          setTimeout(()=> d.scrollIntoView({behavior:'smooth', block:'start'}), 200);
-        }
-      });
-    });
-  </script>
+    <section>
+      <h2>10. Changes to this policy</h2>
+      <div class="content">
+        <p class="muted">We may update this policy; material changes will be posted here with a new “Last updated” date and (where practical) announced in-app. Non-material clarifications may also be made without notice.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>11. Contact &amp; data controller</h2>
+      <div class="content">
+        <p class="muted"><strong>Data controller / developer:</strong> Aditya Barman</p>
+        <p class="muted"><strong>Contact email:</strong> <a href="mailto:rishcrets@gmail.com">rishcrets@gmail.com</a></p>
+      </div>
+    </section>
+
+    <footer>
+      <div>Contact: <a href="mailto:rishcrets@gmail.com">rishcrets@gmail.com</a></div>
+      <div class="muted">CampusBus — making campus travel predictable, reliable and stress-free.</div>
+    </footer>
+  </main>
+</div>
+
+<!-- Modals & JS behavior -->
+<script>
+  const email = 'rishcrets@gmail.com';
+  // quick helpers to open mail compose with prefilled subject & body
+  function openMail(subject, body){
+    location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }
+
+  document.getElementById('requestDeleteBtn').addEventListener('click', ()=> {
+    const body = [
+      "Hello,",
+      "",
+      "I request deletion of my CampusBus account. Please find the details below:",
+      "Account email:",
+      "(user_id if known):",
+      "",
+      "Please confirm what verification you need from me and the expected timeline.",
+      "",
+      "Thanks."
+    ].join('\\n');
+    openMail('Account deletion request — CampusBus', body);
+  });
+
+  document.getElementById('requestExportBtn').addEventListener('click', ()=> {
+    const body = [
+      "Hello,",
+      "",
+      "I request an export of my personal data from CampusBus. Please provide the machine-readable archive.",
+      "Account email:",
+      "user_id (if known):",
+      "",
+      "Thanks."
+    ].join('\\n');
+    openMail('Data export request — CampusBus', body);
+  });
+
+  document.getElementById('contactBtn').addEventListener('click', ()=> openMail('Privacy question — CampusBus','Hello,\\n\\nI have a question about the privacy policy.\\n\\nRegards.'));
+</script>
 </body>
 </html>
-
-
-
-
